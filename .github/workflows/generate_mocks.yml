@@ -42,7 +42,7 @@ jobs:
           pipenv install --dev
       - name: Generate mocks
         run: |
-          python make_mocks.py -u "${{ inputs.username }}" -p "${{ inputs.password }}" -i "${{ inputs.impersonate }}"
+          pipenv run python make_mocks.py -u "${{ inputs.username }}" -p "${{ inputs.password }}" -i "${{ inputs.impersonate }}"
       - name: Check for changes
         run: |
           if git status --porcelain | grep -q .; then
