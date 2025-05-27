@@ -1,0 +1,90 @@
+{
+  "url": "https://fugamusic.com/",
+  "user": "",
+  "password": "",
+  "impersonate": "",
+  "login_url": "https://fugamusic.com/ui-only/v2/login",
+  "output_dir": "mocks",
+  "headers": { "Content-Type": "application/json" },
+  "cases": [
+    {
+      "name": "royalties Overview 200",
+      "method": "GET",
+      "endpoint": "api/v2/finance/royalties_overview",
+      "params": {
+        "organization_id": "3766076257"
+      },
+      "response_file": "royalties_overview_200.json"
+    },
+    {
+      "name": "Products Overview 200",
+      "method": "GET",
+      "endpoint": "api/v2/finance/royalties_overview",
+      "params": {
+        "organization_id": "3766076257"
+      },
+      "response_file": "overview_products.json"
+    },
+    {
+      "name": "Assets Overview 200",
+      "method": "GET",
+      "endpoint": "api/v2/finance/products",
+      "params": {
+        "organization_id": "3766076257"
+      },
+      "response_file": "overview_assets.json"
+    },
+    {
+      "name": "Artists Overview 200",
+      "method": "GET",
+      "endpoint": "api/v2/finance/artists",
+      "params": {
+        "organization_id": "3766076257"
+      },
+      "response_file": "overview_artists.json"
+    },
+    {
+      "name": "Labels Overview 200",
+      "method": "GET",
+      "endpoint": "api/v2/finance/labels",
+      "params": {
+        "organization_id": "3766076257"
+      },
+      "response_file": "overview_labels.json"
+    },
+    {
+      "name": "Sale_types Overview 200",
+      "method": "GET",
+      "endpoint": "api/v2/finance/sale_types",
+      "params": {
+        "organization_id": "3766076257"
+      },
+      "response_file": "overview_sale_types.json"
+    },
+    {
+      "name": "Dsps Overview 200",
+      "method": "GET",
+      "endpoint": "api/v2/finance/dsps",
+      "params": {
+        "organization_id": "3766076257"
+      },
+      "response_file": "overview_dsps.json"
+    },
+    {
+      "name": "Files 200",
+      "method": "GET",
+      "endpoint": "ui-only/v2/accounting/files",
+      "params": {},
+      "response_file": "files.json"
+    },
+    {
+      "name": "Revenues 200",
+      "method": "GET",
+      "endpoint": "ui-only/v2/accounting/revenues",
+      "params": {
+        "type": "dsp"
+      },
+      "response_file": "revenues.json"
+    }
+  ]
+}
