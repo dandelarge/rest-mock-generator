@@ -45,12 +45,16 @@ jobs:
           pipenv run python make_mocks.py -u "${{ inputs.username }}" -p "${{ inputs.password }}" -i "${{ inputs.impersonate }}"
       - name: Check for changes
         run: |
-          if git status --porcelain | grep -q .; then
+          if git status --porcelain; then
             echo "Changes detected"
           else
             echo "No changes detected"
             exit 0
           fi
+      - name: Configure git
+        run: |
+          git config user.name {{ secrets.GITHUB_NAME }}
+          git config user.email {{ secrets.GITHUB_EMAIL }}
       - name: Add changes
         run: |
           git add .
