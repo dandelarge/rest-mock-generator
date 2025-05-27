@@ -53,8 +53,8 @@ jobs:
           fi
       - name: Configure git
         run: |
-          git config user.name {{ secrets.GITHUB_NAME }}
-          git config user.email {{ secrets.GITHUB_EMAIL }}
+          git config user.name {{ github.username }}
+          git config user.email {{ github.user_email }}
       - name: Add changes
         run: |
           git add .
