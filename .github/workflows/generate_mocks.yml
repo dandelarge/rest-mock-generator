@@ -62,15 +62,6 @@ jobs:
           git push origin ${{ inputs.branch }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Create pull request
-        uses: peter-evans/create-pull-request@v7
-        with:
-          branch: ${{ inputs.branch }}
-          title: "Update mocks"
-          body: "This PR updates the mocks with the latest data."
-          commit-message: "Update mocks"
-          base: main
-          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Clean up
         run: |
           pipenv --rm || true
