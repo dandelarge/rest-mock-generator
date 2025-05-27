@@ -112,6 +112,11 @@ def fetch_data(endpoint, method='GET', params=None, headers=None):
 def main():
     global sessionid, token
 
+    if args.user and args.password:
+        print(f"Using provided user: {args.user}")
+        print(f"Using provided password: {args.password}")
+        authenticate(args.user, args.password, login_url, impersonate)
+
     if os.path.exists('sessiondata.json'):
         print("Reading session data from 'sessiondata.json'")
     else:
